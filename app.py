@@ -12,10 +12,9 @@ img with class .asset
 '''
 
 config = [
-    # {'blog': 'e2e', 'url_start': 'https://e2e.thespec.com/2018/09/matsos-undergoing-tests-after-behind-bench-collapse-.html', 'url_prev': '.content-nav-prev', },
+    {'blog': 'e2e', 'url_start': 'https://e2e.thespec.com/2018/09/matsos-undergoing-tests-after-behind-bench-collapse-.html', 'url_prev': '.content-nav-prev'},
     {'blog': 'scratchingpost', 'url_start': 'https://scratchingpost.thespec.com/2015/05/christian-covington-son-of-grover-drafted-by-texans.html',
-        'url_prev': '.content-nav-prev', }
-    
+        'url_prev': '.content-nav-prev'}
 ]
 
 # https://e2e.thespec.com/2018/09/matsos-undergoing-tests-after-behind-bench-collapse-.html
