@@ -13,9 +13,9 @@ img with class .asset
 '''
 
 config = [
-    {'blog': 'e2e', 'url_start': 'https://e2e.thespec.com/2018/09/matsos-undergoing-tests-after-behind-bench-collapse-.html', 'url_prev': '.content-nav-prev', 'img_src': '.asset.asset-image'},
+    # {'blog': 'e2e', 'url_start': 'https://e2e.thespec.com/2018/09/matsos-undergoing-tests-after-behind-bench-collapse-.html', 'url_prev': '.content-nav-prev', 'img_src': '.asset.asset-image'},
     # {'blog': 'scratchingpost', 'url_start': 'https://scratchingpost.thespec.com/2015/05/christian-covington-son-of-grover-drafted-by-texans.html', 'url_prev': '.content-nav-prev'}
-    # {'blog': 'insider', 'url_start': 'https://insider.thespec.com/2017/03/editorial-no-room-for-secret-salaries.html', 'url_prev': '.content-nav-prev', 'img_src': '.asset.asset-image'},
+    {'blog': 'insider', 'url_start': 'https://insider.thespec.com/2017/03/editorial-no-room-for-secret-salaries.html', 'url_prev': '.content-nav-prev', 'img_src': '.asset.asset-image'},
 
 ]
 
@@ -38,7 +38,7 @@ def download_image(data):
         # download full image
         print("Downloading image: ", (((item['fname'])[:-5]) + 'pi'))
 
-        urllib.request.urlretrieve((item['url']).replace('-800wi', '-pi'), (item['fname']).replace('-800wi', '-pi'))
+        urllib.request.urlretrieve((((item['url'])[:-5]) + 'pi'), (((item['fname'])[:-5]) + 'pi'))
         time.sleep(10)
     pass
 
