@@ -15,7 +15,7 @@ img with class .asset
 config = [
     # {'blog': 'e2e', 'url_start': 'https://e2e.thespec.com/2018/09/matsos-undergoing-tests-after-behind-bench-collapse-.html', 'url_prev': '.content-nav-prev', 'img_src': '.asset.asset-image'},
     # {'blog': 'scratchingpost', 'url_start': 'https://scratchingpost.thespec.com/2015/05/christian-covington-son-of-grover-drafted-by-texans.html', 'url_prev': '.content-nav-prev'}
-    {'blog': 'insider', 'url_start': 'https://insider.thespec.com/2017/03/editorial-no-room-for-secret-salaries.html', 'url_prev': '.content-nav-prev', 'img_src': '.asset.asset-image' },
+    {'blog': 'insider', 'url_start': 'https://insider.thespec.com/2017/03/editorial-no-room-for-secret-salaries.html', 'url_prev': '.content-nav-prev', 'img_src': '.asset.asset-image'},
 
 ]
 
@@ -48,8 +48,7 @@ def get_image_links(r, blog):
     if images_list:
         print(f'''{len(images_list)} image(s) found''')
         images_urls = [
-            {'url': (x.attrs)[
-                'src'], 'fname': f'''{blog}/{(re.match('https://.*com/(.a/)?(.*-\d{3}wi)', (x.attrs)['src'])).group(2)}'''}
+            {'url': (x.attrs)['src'], 'fname': blog + (re.match(r'https://.*com/(.a/)?(.*-\d{3}wi)', (x.attrs)['src'])).group(2)}
             for x in images_list
         ]
         download_image(images_urls)
