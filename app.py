@@ -14,8 +14,9 @@ img with class .asset
 
 config = [
     # {'blog': 'e2e', 'url_start': 'https://e2e.thespec.com/2018/09/matsos-undergoing-tests-after-behind-bench-collapse-.html', 'url_prev': '.content-nav-prev', 'img_src': '.asset.asset-image'},
-    # {'blog': 'scratchingpost', 'url_start': 'https://scratchingpost.thespec.com/2015/05/christian-covington-son-of-grover-drafted-by-texans.html', 'url_prev': '.content-nav-prev'}
-    {'blog': 'insider', 'url_start': 'https://insider.thespec.com/2017/03/editorial-no-room-for-secret-salaries.html', 'url_prev': '.content-nav-prev', 'img_src': '.asset.asset-image'},
+    {'blog': 'scratchingpost', 'url_start': 'https://scratchingpost.thespec.com/2014/06/cfl-preview-replay-move-a-big-one-snippets-on-all-nine-teams.html', 'url_prev': '.content-nav-prev'}
+    #{'blog': 'insider', 'url_start': 'https://insider.thespec.com/2017/03/editorial-no-room-for-secret-salaries.html', 'url_prev': '.content-nav-prev', 'img_src': '.asset.asset-image'},
+    #{'blog': 'specthread', 'url_start': '', 'url_prev': '.content-nav-prev', 'img_src': '.asset.asset-image'},
 
 ]
 
