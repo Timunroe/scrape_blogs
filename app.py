@@ -13,9 +13,9 @@ img with class .asset
 '''
 
 config = [
-    # {'blog': 'e2e', 'url_start': 'https://e2e.thespec.com/2018/09/matsos-undergoing-tests-after-behind-bench-collapse-.html', 'url_prev': '.content-nav-prev', 'img_src': '.asset.asset-image'},
+    {'blog': 'e2e', 'url_start': 'https://e2e.thespec.com/2018/09/matsos-undergoing-tests-after-behind-bench-collapse-.html', 'url_prev': '.content-nav-prev', 'img_src': '.asset.asset-image'},
     # {'blog': 'scratchingpost', 'url_start': 'https://scratchingpost.thespec.com/2015/05/christian-covington-son-of-grover-drafted-by-texans.html', 'url_prev': '.content-nav-prev'}
-    {'blog': 'insider', 'url_start': 'https://insider.thespec.com/2017/03/editorial-no-room-for-secret-salaries.html', 'url_prev': '.content-nav-prev', 'img_src': '.asset.asset-image'},
+    # {'blog': 'insider', 'url_start': 'https://insider.thespec.com/2017/03/editorial-no-room-for-secret-salaries.html', 'url_prev': '.content-nav-prev', 'img_src': '.asset.asset-image'},
 
 ]
 
@@ -34,7 +34,7 @@ def download_image(data):
         # download image used
         print("Downloading image: ", item['fname'])
         urllib.request.urlretrieve(item['url'], item['fname'])
-        time.sleep(5)
+        time.sleep(10)
         # download full image
         print("Downloading image: ", (((item['fname'])[:-5]) + 'pi'))
 
@@ -44,11 +44,11 @@ def download_image(data):
 
 
 def get_image_links(r, blog):
-    images_list = r.html.find('.asset.image-full')
+    images_list = r.html.find('.asset.asset-image')
     if images_list:
         print(f'''{len(images_list)} image(s) found''')
         images_urls = [
-            {'url': (x.attrs)['src'], 'fname': blog + (re.match(r'https://.*com/(.a/)?(.*-\d{3}wi)', (x.attrs)['src'])).group(2)}
+            {'url': (x.attrs)['src'], 'fname': blog + '/' + (re.match(r'https://.*com/(.a/)?(.*-\d{3}wi)', (x.attrs)['src'])).group(2)}
             for x in images_list
         ]
         download_image(images_urls)
@@ -61,7 +61,7 @@ def process_url(link, blog):
     r = session.get(link)
     get_image_links(r, blog)
     # find 'prev' link
-    time.sleep(5)
+    time.sleep(10)
     try:
         prev_url = ((r.html.find('.content-nav-prev', first=True)).attrs)['href']
         print("Previous url is: ", prev_url)
@@ -72,4 +72,4 @@ def process_url(link, blog):
 
 for i in config:
     process_url(i['url_start'], i['blog'])
-    time.sleep(5)
+    time.sleep(10)
